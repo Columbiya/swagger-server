@@ -17,5 +17,5 @@
 ## Шаги для развертки
 
 1. в корне проекта пишем `npm i`
-2. `pm2 start "npm run start" --name YOUR_PROJECT_NAME`
+2. `pm2 start npm --name YOUR_PROJECT_NAME -- start`
 3. `pm2 save`
