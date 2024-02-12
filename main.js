@@ -3,6 +3,9 @@ const swaggerUi = require("swagger-ui-express");
 const fs = require("fs");
 const path = require("path");
 const watchForSwaggerChanges = require("./src/watchForSwaggerChanges.js");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 
@@ -21,6 +24,6 @@ app.use(
 
 watchForSwaggerChanges(app, path.resolve(__dirname, "openapi.json"));
 
-app.listen(80, () => {
+app.listen(process.env.APP_PORT, () => {
   console.log("server up");
 });
